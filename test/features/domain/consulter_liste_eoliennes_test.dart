@@ -17,11 +17,12 @@ void main() {
   });
 
   test("devrait appeler [EolienneRepository.consulterListeElionnes]", () async {
+    final idUtilisateur = 0;
     when(
-      () => repository.consulterListeEoliennes(),
+      () => repository.consulterListeEoliennes(idUtilisateur),
     ).thenAnswer((_) async => Succes(true));
-    await consulterListeEoliennes();
+    await consulterListeEoliennes({"idUtilisateur":idUtilisateur});
 
-    verify(() => repository.consulterListeEoliennes());
+    verify(() => repository.consulterListeEoliennes(idUtilisateur));
   });
 }

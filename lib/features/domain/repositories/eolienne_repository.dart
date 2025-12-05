@@ -10,8 +10,8 @@ abstract class EolienneRepository {
     String motDePasse,
   );
 
-  FutureResultat consulterEtatEolienne(int idEolienne);
-  FutureResultat consulterListeEoliennes();
-  FutureResultat ajouterEolienne(String numeroSerie);
+  FutureResultat consulterEtatEolienne(int idUtilisateur, int idEolienne);
+  FutureResultat consulterListeEoliennes(int idUtilisateur);
+  FutureResultat ajouterEolienne(int idUtilisateur,String numeroSerie);
   FutureResultat supprimerEolienne(int idEolienne);
 }

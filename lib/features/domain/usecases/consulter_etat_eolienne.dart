@@ -9,6 +9,8 @@ class ConsulterEtatEolienne {
   @override
   FutureResultat call(Map<String, int> params) {
     final idEolienne = params["idEolienne"]!;
-    return repository.consulterEtatEolienne(idEolienne);
+    final idUtilisateur = params["idUtilisateur"]!;
+
+    return repository.consulterEtatEolienne(idUtilisateur,idEolienne);
   }
 }
