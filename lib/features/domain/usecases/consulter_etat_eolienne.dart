@@ -7,7 +7,7 @@ class ConsulterEtatEolienne {
   ConsulterEtatEolienne({required this.repository});
 
   @override
-  FutureResultat call(int idEolienne) {
-    return repository.consulterEtatEolienne(idEolienne);
+  FutureResultat call(String numeroSerie) {
+    return repository.consulterEtatEolienne(numeroSerie);
   }
 }

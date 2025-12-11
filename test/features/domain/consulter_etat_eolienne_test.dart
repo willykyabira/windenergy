@@ -16,12 +16,12 @@ void main() {
   });
 
   test("devrait appeler [EolienneRepository.consulterEtatEolienne]", () async {
-    final idEolienne = 0;
+    final numeroSerie = "0";
     when(
-      () => repository.consulterEtatEolienne(idEolienne),
+      () => repository.consulterEtatEolienne(numeroSerie),
     ).thenAnswer((_) async => Succes(true));
-    await consulterEtatEolienne(idEolienne);
+    await consulterEtatEolienne(numeroSerie);
 
-    verify(() => repository.consulterEtatEolienne(idEolienne));
+    verify(() => repository.consulterEtatEolienne(numeroSerie));
   });
 }

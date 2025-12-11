@@ -28,12 +28,12 @@ void main() {
   });
 
   test("devrait appeler [EolienneRepository.supprimerEolienne]", () async {
-    final idEolienne = 0;
+    final numeroSerie = "";
     when(
-      () => repository.supprimerEolienne(idEolienne),
+      () => repository.supprimerEolienne(numeroSerie),
     ).thenAnswer((_) async => Succes(true));
-    await supprimerEolienne(idEolienne);
+    await supprimerEolienne(numeroSerie);
 
-    verify(() => repository.supprimerEolienne(idEolienne));
+    verify(() => repository.supprimerEolienne(numeroSerie));
   });
 }

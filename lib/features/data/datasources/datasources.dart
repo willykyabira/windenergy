@@ -5,7 +5,7 @@ abstract class DatabaseDatasource {
 
   FutureResultat authentifier(String email, String motDePasse);
 
-  FutureResultat consulterEtatEolienne(int idEolienne);
+  FutureResultat consulterEtatEolienne(String numeroSerie);
 
   FutureResultat consulterListeEoliennes();
 
@@ -16,5 +16,5 @@ abstract class DatabaseDatasource {
     String motDePasse,
   );
 
-  FutureResultat supprimerEolienne(int idEolienne);
+  FutureResultat supprimerEolienne(String numeroSerie);
 }

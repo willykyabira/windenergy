@@ -58,16 +58,15 @@ class SupabaseDatasource extends DatabaseDatasource {
   }
 
   @override
-  FutureResultat consulterEtatEolienne(int idEolienne) async {
+  FutureResultat consulterEtatEolienne(String numeroSerie) async {
     try {
       var resultat = await client
           .from('eoliennes')
           .select()
-          .eq('id', idEolienne);
+          .eq('numero_serie', numeroSerie);
       var eolienne = resultat[0];
       return Succes(EolienneModel.fromJSON(eolienne));
     } catch (e) {
-      print(e);
       throw ServerException(
         message: "Une erreur s'est produite sur le serveur",
       );
@@ -127,9 +126,9 @@ class SupabaseDatasource extends DatabaseDatasource {
   }
 
   @override
-  FutureResultat supprimerEolienne(int idEolienne) async {
+  FutureResultat supprimerEolienne(String numeroSerie) async {
     try {
-      await client.from('eoliennes').delete().eq(('id'), idEolienne);
+      await client.from('eoliennes').delete().eq(('id'), numeroSerie);
       return Succes(true);
     } catch (e) {
       throw ServerException(

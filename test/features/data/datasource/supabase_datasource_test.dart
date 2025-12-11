@@ -85,7 +85,7 @@ void main() {
       supabaseDatasource = SupabaseDatasource(
         supaMock.mockSelectTable(response: [expected]),
       );
-      var actual = await supabaseDatasource.consulterEtatEolienne(0);
+      var actual = await supabaseDatasource.consulterEtatEolienne("0");
       expect(actual, Succes(EolienneModel.fromJSON(expected)));
     });
   });

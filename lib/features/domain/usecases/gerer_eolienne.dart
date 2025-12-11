@@ -18,7 +18,7 @@ class SupprimerEolienne {
   SupprimerEolienne({required this.repository});
 
   @override
-  FutureResultat call(int idEolienne) {
-    return repository.supprimerEolienne(idEolienne);
+  FutureResultat call(String numeroSerie) {
+    return repository.supprimerEolienne(numeroSerie);
   }
 }

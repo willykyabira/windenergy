@@ -27,9 +27,9 @@ class EolienneRepositoryImpl extends EolienneRepository {
   }
 
   @override
-  FutureResultat consulterEtatEolienne(int idEolienne) async {
+  FutureResultat consulterEtatEolienne(String numeroSerie) async {
     try {
-      return await databaseDatasource.consulterEtatEolienne(idEolienne);
+      return await databaseDatasource.consulterEtatEolienne(numeroSerie);
     } on ServerException catch (e) {
       return Echec(message: e.message);
     }
@@ -59,9 +59,9 @@ class EolienneRepositoryImpl extends EolienneRepository {
   }
 
   @override
-  FutureResultat supprimerEolienne(int idEolienne) async {
+  FutureResultat supprimerEolienne(String numeroSerie) async {
     try {
-      return await databaseDatasource.supprimerEolienne(idEolienne);
+      return await databaseDatasource.supprimerEolienne(numeroSerie);
     } on ServerException catch (e) {
       return Echec(message: e.message);
     }
