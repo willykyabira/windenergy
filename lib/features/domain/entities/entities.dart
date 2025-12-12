@@ -1,26 +1,24 @@
 import 'package:equatable/equatable.dart';
 
 class Utilisateur extends Equatable {
-  final String authId;
-  final int idUtilisateur;
+  final String id;
   final String email;
   final String nom;
   final String prenom;
 
   const Utilisateur({
-    this.authId = "",
-    this.idUtilisateur = 0,
+    this.id = "",
     this.email = "",
     this.nom = "",
     this.prenom = "",
   });
 
   @override
-  List<Object?> get props => [authId];
+  List<Object?> get props => [id];
 }
 
 class Eolienne extends Equatable {
-  final int idUtilisateur;
+  final String idUtilisateur;
   final String numeroSerie;
   final double vitesseRotation;
   final double puissanceGenere;
@@ -30,8 +28,8 @@ class Eolienne extends Equatable {
   final bool actif;
   
 
-  Eolienne({
-    this.idUtilisateur = 0,
+  const Eolienne({
+    this.idUtilisateur = "",
     this.numeroSerie = "",
     this.vitesseRotation = 0,
     this.puissanceGenere = 0,

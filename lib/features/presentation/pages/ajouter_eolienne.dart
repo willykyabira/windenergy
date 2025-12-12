@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:windenergy/features/presentation/widgets/logo.dart';
+import 'package:windenergy/features/presentation/widgets/logo_small.dart';
 import 'package:windenergy/features/presentation/widgets/windenergy_button.dart';
 import 'package:windenergy/features/presentation/widgets/windenergy_textfield.dart';
 import 'package:windenergy/ui/couleurs.dart';
 
-class AuthentificationPage extends StatelessWidget {
-  const AuthentificationPage({super.key});
+class AjouterEoliennePage extends StatelessWidget {
+  const AjouterEoliennePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: LogoSmall(),
+        backgroundColor: couleurFond,
+      ),
       body: Container(
-        constraints: BoxConstraints.expand(),
-        padding: EdgeInsets.all(20),
         color: couleurFond,
+        padding: EdgeInsets.all(20),
+        constraints: BoxConstraints.expand(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Logo(),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             Text(
-              "E-mail",
+              "Wind Energy",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.hammersmithOne(
+                color: couleurPrincipale,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Numéro Serie",
               style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
@@ -29,10 +42,10 @@ class AuthentificationPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            WindenergyTextField(hintText: "email"),
+            WindenergyTextField(hintText: "numero serie"),
             SizedBox(height: 20),
             Text(
-              "Mot de passe",
+              "Hash Securité",
               style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
@@ -42,15 +55,12 @@ class AuthentificationPage extends StatelessWidget {
             SizedBox(height: 10),
             WindenergyTextField(hintText: "mot de passe", obscureText: true),
             SizedBox(height: 30),
-            WindenergyButton(libelle: "s'authentifier", onPressed: () {}),
-            SizedBox(height: 20),
-            Text(
-              "Pas encore enregistré?",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.inter(color: couleurPrincipale, fontSize: 14),
+            WindenergyButton(libelle: "enregister", onPressed: () {}),
+            SizedBox(height: 30),
+            WindenergyButton(
+              libelle: "retour à l'écran principale",
+              onPressed: () {},
             ),
-            SizedBox(height: 20),
-            WindenergyButton(libelle: "s'enregistrer", onPressed: () {}),
           ],
         ),
       ),

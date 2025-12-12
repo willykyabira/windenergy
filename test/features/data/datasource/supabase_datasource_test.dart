@@ -73,14 +73,14 @@ void main() {
    group("tests pour consulterEtatEolienne", () {
     test("devrait retourner un Succes", () async {
       Map<String,dynamic> expected = {
-        "idUtilisateur": 1,
+        "utilisateur_id": "1",
         "actif": true,
-        "hashSecurite": "0",
-        "numeroSerie": "0",
+        "hash_securite": "0",
+        "numero_serie": "0",
         "orientation": 0.0,
-        "puissanceGenere": 0.0,
-        "tempsDerniereMesure": 0,
-        "vitesseRotation": 0.0,
+        "puissance_genere": 0.0,
+        "temps_derniere_mesure": DateTime(1970).toIso8601String(),
+        "vitesse_rotation": 0.0,
       };
       supabaseDatasource = SupabaseDatasource(
         supaMock.mockSelectTable(response: [expected]),
@@ -93,14 +93,14 @@ void main() {
   group("tests pour consulterListeEoliennes", () {
     test("devrait retourner un Succes", () async {
       Map<String,dynamic> expected = {
-        "idUtilisateur": 1,
+        "utilisateur_id": "1",
         "actif": true,
-        "hashSecurite": "0",
-        "numeroSerie": "0",
+        "hash_securite": "0",
+        "numero_serie": "0",
         "orientation": 0.0,
-        "puissanceGenere": 0.0,
-        "tempsDerniereMesure": 0,
-        "vitesseRotation": 0.0,
+        "puissance_genere": 0.0,
+        "temps_derniere_mesure": DateTime(1970).toIso8601String(),
+        "vitesse_rotation": 0.0,
       };
       supabaseDatasource = SupabaseDatasource(
         supaMock.mockSelectTable(response: [expected]),
