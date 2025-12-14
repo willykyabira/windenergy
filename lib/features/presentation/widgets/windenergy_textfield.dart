@@ -13,7 +13,7 @@ class WindenergyTextField extends StatelessWidget {
     this.hintText = "",
     this.controller,
     this.obscureText = false,
-    this.enabled = true,
+    this.enabled = true, required Icon prefixIcon, required String labelText,
   });
 
   @override
